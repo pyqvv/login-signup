@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginSignUp from './Components/LoginSignup/LoginSignUp';
+import Background from './Components/Background/Background';
+import Navbar from './Components/Navbar/Navbar';
+import Hero from './Components/Hero/Hero';
 
 function App() {
+  let heroData = [
+    {text1:"진료의 혁신을", text2:"가져다주다"},
+    {text1:"앞서 나가는", text2:"진료"},
+    {text1:"집에서", text2:"간단하게"}
+  ]
+  const [heroCount,setHeroCount] = useState(2);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<div>
+          <Background heroCount={heroCount}/>
+          <Navbar/>
+          <Hero
+            heroData={heroData[heroCount]}
+            heroCount={heroCount}
+            setHeroCount={setHeroCount}
+          />
+          </div>}>
+        </Route>
+        <Route path="/loginSignUp" element={<LoginSignUp/>} />
+      </Routes>
+    </Router>
   );
 }
 
