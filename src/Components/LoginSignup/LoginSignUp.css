@@ -2,10 +2,9 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 200px;
     width: 600px;
     background: #fff;
-    padding-bottom: 30px;
+    padding-bottom: 100px;
 }
 
 .header {
@@ -18,22 +17,22 @@
 }
 
 .text {
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 700;
 }
 
-.underline {
-    width: 61px;
-    height: 6px;
-    background: #000;
-    border-radius: 9px;
-}
-
 .inputs {
-    margin-top: 55px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 25px;
+}
+
+.role {
+    display: flex;
+    gap: 10px; /* 두 입력 요소 사이의 간격 */
+    align-items: center; /* 입력 요소와 텍스트 수직 정렬 */
+    padding: 20px;
 }
 
 .input {
@@ -41,7 +40,7 @@
     align-items: center;
     margin: auto;
     width: 480px;
-    height: 80px;
+    height: 50px;
     background: #D3D3D3;    /*light gray*/
     border-radius: 6px;
 }
@@ -53,14 +52,14 @@
     border: none;
     outline: none;
     color: #797979;     /*dark gray*/
-    font-size: 19px;
+    font-size: 15px;
     margin: auto;
 }
 
 .field_name {
     width: 110px;
     margin: 0px 30px;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     text-align: center;
 }
